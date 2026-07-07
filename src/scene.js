@@ -159,18 +159,36 @@ export function initScene(container) {
 
     const marker = { corner, el, tooltip, line, visible: true, hovering: false };
 
-    el.addEventListener('mouseenter', () => {
-      marker.hovering = true;
-      animate(line, { opacity: 1 }, { duration: 0.25 });
-      animate(tooltip, { opacity: 1 }, { duration: 0.25 });
-    });
-    el.addEventListener('mouseleave', () => {
-      marker.hovering = false;
-      animate(line, { opacity: 0 }, { duration: 0.2 });
-      animate(tooltip, { opacity: 0 }, { duration: 0.2 });
+    el.addEventListener('mouseenter', () => showTooltip(marker));
+    el.addEventListener('mouseleave', () => hideTooltip(marker));
+
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (marker.hovering) {
+        hideTooltip(marker);
+      } else {
+        markers.forEach((m) => m !== marker && hideTooltip(m));
+        showTooltip(marker);
+      }
     });
 
     return marker;
+  });
+
+  function showTooltip(marker) {
+    marker.hovering = true;
+    animate(marker.line, { opacity: 1 }, { duration: 0.25 });
+    animate(marker.tooltip, { opacity: 1 }, { duration: 0.25 });
+  }
+
+  function hideTooltip(marker) {
+    marker.hovering = false;
+    animate(marker.line, { opacity: 0 }, { duration: 0.2 });
+    animate(marker.tooltip, { opacity: 0 }, { duration: 0.2 });
+  }
+
+  document.addEventListener('click', () => {
+    markers.forEach((m) => hideTooltip(m));
   });
 
   const vector = new THREE.Vector3();
