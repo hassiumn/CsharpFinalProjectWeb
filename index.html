@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glass Cube</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="app">
+    <div id="scene-container" class="scene-container"></div>
+
+    <div id="blur-overlay" class="blur-overlay"></div>
+
+    <header class="topbar">
+      <button id="menu-btn" class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="side-menu">
+        <span class="menu-line line-1"></span>
+        <span class="menu-line line-2"></span>
+        <span class="menu-line line-3"></span>
+      </button>
+    </header>
+
+    <nav id="side-menu" class="side-menu" aria-hidden="true">
+      <ul class="side-menu-list">
+        <li>
+          <button class="side-menu-item" type="button">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.7" r="0.6" fill="currentColor" stroke="none"/></svg>
+            Information
+          </button>
+        </li>
+        <li>
+          <button class="side-menu-item" type="button">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+            Download
+          </button>
+        </li>
+        <li>
+          <button class="side-menu-item" type="button">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+            About us
+          </button>
+        </li>
+        <li>
+          <button class="side-menu-item" type="button">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L2 10.5l6.5 2.5M21 3l-3 17-8-6.5M21 3L9 14"/></svg>
+            Telegram
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="hero">
+      <span class="hero-label">Minimalist 3D Experience</span>
+      <h1 class="hero-title">TEXT</h1>
+      <h5 class="hero-subtitle">text</h5>
+      <p class="hero-description">A modern 3D interactive experience built with Three.js. Simple. Clean. Interactive.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" type="button">
+          Get started
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <button class="btn btn-secondary" type="button">Learn more</button>
+      </div>
+    </main>
+
+    <footer class="social-links">
+      <a href="https://github.com/hassiumn/CsharpFinalProjectWeb" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+        <img src="/icons/github.png" width="20" height="20" alt="GitHub" />
+      </a>
+      <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">
+        <img src="/icons/telegram.png" width="20" height="20" alt="Telegram" />
+      </a>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
