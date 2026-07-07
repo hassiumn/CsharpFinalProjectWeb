@@ -419,9 +419,9 @@ html, body {
     width: 100%;
     height: auto;
     padding: 110px 8% 16px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    text-align: center;
+    text-align: left;
     flex-shrink: 0;
     order: 1;
   }
