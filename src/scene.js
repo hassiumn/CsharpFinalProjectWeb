@@ -245,9 +245,19 @@ export function initScene(container) {
       line.setAttribute('x2', ex);
       line.setAttribute('y2', ey);
 
-      tooltip.style.left = `${ex + (dx >= 0 ? TOOLTIP_GAP : -TOOLTIP_GAP)}px`;
-      tooltip.style.top = `${ey}px`;
-      tooltip.style.transform = dx >= 0 ? 'translate(0, -50%)' : 'translate(-100%, -50%)';
+      const tipW = tooltip.offsetWidth || 60;
+      const tipH = tooltip.offsetHeight || 16;
+      const edgePad = 8;
+
+      let tipLeft = dx >= 0 ? ex + TOOLTIP_GAP : ex - TOOLTIP_GAP - tipW;
+      tipLeft = Math.min(Math.max(tipLeft, edgePad), w - tipW - edgePad);
+
+      let tipTop = ey - tipH / 2;
+      tipTop = Math.min(Math.max(tipTop, edgePad), h - tipH - edgePad);
+
+      tooltip.style.left = `${tipLeft}px`;
+      tooltip.style.top = `${tipTop}px`;
+      tooltip.style.transform = 'none';
     });
   }
 
